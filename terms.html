@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="tranzyNote Terms of Service - User agreement and service terms">
+    <title>Terms of Service | tranzyNote</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Additional page-specific styles */
+        .policy-hero {
+            padding: 10rem 0 4rem;
+            background: linear-gradient(180deg, rgba(249, 250, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policy-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
+        }
+
+        .policy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        .policy-content h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            scroll-margin-top: 100px;
+        }
+
+        .policy-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content p {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-content ul, .policy-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .policy-content li {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 0.75rem;
+        }
+
+        .policy-content strong {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        .policy-toc {
+            background: var(--gray-50);
+            border-radius: var(--border-radius-xl);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--primary-600);
+        }
+
+        .policy-toc h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .policy-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .policy-toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-toc a {
+            color: var(--primary-600);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-base);
+        }
+
+        .policy-toc a:hover {
+            color: var(--primary-700);
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border-left: 4px solid var(--primary-600);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(220, 38, 38, 0.05) 100%);
+            border-left: 4px solid #EF4444;
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .last-updated {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo" aria-label="tranzyNote Home">
+                    <img src="logo.ico" alt="tranzyNote Logo" width="40" height="40">
+                    <span class="logo-text">tranzyNote</span>
+                </a>
+                <div class="nav-actions">
+                    <a href="payment.html" class="btn btn-primary">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="policy-hero">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1;">
+                <h1 class="hero-title" style="margin-bottom: 1rem;">
+                    Terms of <span class="gradient-text">Service</span>
+                </h1>
+                <p class="hero-subtitle" style="margin-bottom: 0;">
+                    Please read these terms carefully before using tranzyNote's services.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
+    <div class="policy-content">
+        <div class="last-updated">Last Updated: January 25, 2026</div>
+
+        <div class="warning-box">
+            <p style="margin-bottom: 0;"><strong>Important:</strong> By accessing or using tranzyNote, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+        </div>
+
+        <div class="policy-toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+                <li><a href="#services">2. Description of Services</a></li>
+                <li><a href="#account">3. Account Registration and Security</a></li>
+                <li><a href="#usage">4. Acceptable Use Policy</a></li>
+                <li><a href="#payments">5. Payments and Subscriptions</a></li>
+                <li><a href="#data-ownership">6. Data Ownership and License</a></li>
+                <li><a href="#ai-features">7. AI Features and Limitations</a></li>
+                <li><a href="#termination">8. Termination</a></li>
+                <li><a href="#disclaimers">9. Disclaimers and Limitations</a></li>
+                <li><a href="#contact">10. Contact Information</a></li>
+            </ul>
+        </div>
+
+        <p>This Customer Terms of Service Agreement ("Agreement") is entered into between <strong>tranzyNote</strong> ("Company", "we", "us", "our") and the individual or entity accessing or using our services ("Customer", "you", "your").</p>
+
+        <h2 id="acceptance">1. Acceptance of Terms</h2>
+
+        <p>By creating an account, downloading our software, or using any of our services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy.</p>
+
+        <p>If you are using tranzyNote on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these terms.</p>
+
+        <h2 id="services">2. Description of Services</h2>
+
+        <p>tranzyNote provides an AI-powered meeting assistant platform that includes:</p>
+
+        <ul>
+            <li><strong>Real-time AI Assistance:</strong> Contextual AI support during calls and meetings</li>
+            <li><strong>Transcription Services:</strong> Automatic transcription of meeting audio with 99.8% accuracy</li>
+            <li><strong>Document-Based Responses:</strong> AI assistance based on uploaded documents and knowledge bases</li>
+            <li><strong>Meeting Notes:</strong> Automated generation of structured meeting summaries and action items</li>
+            <li><strong>Specialized Modes:</strong> Tailored assistance for different meeting scenarios</li>
+            <li><strong>Integration Services:</strong> Integration with popular meeting platforms and productivity tools</li>
+        </ul>
+
+        <h3>2.1 Service Availability</h3>
+        <p>We strive to provide reliable service availability but do not guarantee uninterrupted access. Services may be temporarily unavailable due to maintenance, updates, or circumstances beyond our control.</p>
+
+        <h3>2.2 Software License</h3>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use tranzyNote desktop applications solely for accessing our services in accordance with these terms.</p>
+
+        <h2 id="account">3. Account Registration and Security</h2>
+
+        <h3>3.1 Account Creation</h3>
+        <p>To use tranzyNote, you must create an account by providing accurate and complete information. You agree to:</p>
+        <ul>
+            <li>Provide true, accurate, current, and complete information during registration</li>
+            <li>Maintain and promptly update your account information</li>
+            <li>Maintain the security and confidentiality of your login credentials</li>
+            <li>Notify us immediately of any unauthorized access to your account</li>
+        </ul>
+
+        <h3>3.2 Account Responsibility</h3>
+        <p>You are responsible for all activities that occur under your account. We are not liable for any loss or damage arising from unauthorized use of your account credentials.</p>
+
+        <h3>3.3 Age Requirements</h3>
+        <p>You must be at least 16 years old to use tranzyNote. By using our services, you represent that you meet this age requirement.</p>
+
+        <h2 id="usage">4. Acceptable Use Policy</h2>
+
+        <p>You agree to use tranzyNote only for lawful purposes and in accordance with these terms. You agree NOT to:</p>
+
+        <ul>
+            <li>Violate any applicable local, state, national, or international law or regulation</li>
+            <li>Use the service to record conversations without proper consent as required by applicable law</li>
+            <li>Impersonate any person or entity, or falsely state or misrepresent your affiliation</li>
+            <li>Interfere with or disrupt the services or servers or networks connected to the services</li>
+            <li>Use any automated system to access the services in a manner that sends more requests than a human can produce</li>
+            <li>Reverse engineer, decompile, or disassemble any part of the services</li>
+            <li>Upload or transmit viruses, malware, or other malicious code</li>
+            <li>Use the service to harass, abuse, or harm another person</li>
+            <li>Collect or store personal data about other users without their consent</li>
+            <li>Resell, sublicense, or redistribute the services without our written permission</li>
+        </ul>
+
+        <div class="warning-box">
+            <p><strong>Recording Laws:</strong> You are solely responsible for ensuring your use of tranzyNote's recording and transcription features complies with all applicable laws, including laws requiring consent to record conversations. We are not responsible for your failure to comply with such laws.</p>
+        </div>
+
+        <h2 id="payments">5. Payments and Subscriptions</h2>
+
+        <h3>5.1 Pricing</h3>
+        <p>Our pricing plans are detailed on our pricing page. We reserve the right to modify our pricing at any time. Price changes will not affect active subscriptions until renewal.</p>
+
+        <h3>5.2 Payment Terms</h3>
+        <ul>
+            <li>All fees are in Indian Rupees (₹) unless otherwise stated</li>
+            <li>Payments are processed through secure third-party payment providers (Stripe, Razorpay)</li>
+            <li>You authorize us to charge your payment method for all fees incurred</li>
+            <li>Hourly bundle purchases and pay-as-you-go credits are valid for 30 days from purchase</li>
+        </ul>
+
+        <h3>5.3 Subscriptions and Renewals</h3>
+        <p>Subscription plans automatically renew at the end of each billing period unless cancelled. You may cancel your subscription at any time through your account settings. Cancellation takes effect at the end of the current billing period.</p>
+
+        <h3>5.4 Refunds</h3>
+        <p>All fees are non-refundable except where required by applicable law. We may, at our sole discretion, provide refunds or credits on a case-by-case basis for service outages or billing errors.</p>
+
+        <h2 id="data-ownership">6. Data Ownership and License</h2>
+
+        <h3>6.1 Your Data</h3>
+        <p>You retain all ownership rights to the content you upload, create, or generate through tranzyNote ("Customer Data"), including:</p>
+        <ul>
+            <li>Meeting transcripts</li>
+            <li>Uploaded documents</li>
+            <li>Meeting notes and summaries</li>
+            <li>Any other content you create</li>
+        </ul>
+
+        <h3>6.2 License to tranzyNote</h3>
+        <p>By using our services, you grant tranzyNote a limited, worldwide, non-exclusive license to use, store, and process your Customer Data solely for the purpose of providing and improving our services.</p>
+
+        <div class="highlight-box">
+            <p><strong>Our Commitment:</strong> We do not use your private meeting content, transcripts, or uploaded documents to train our AI models without your explicit consent. Your data is your data.</p>
+        </div>
+
+        <h3>6.3 Data Deletion</h3>
+        <p>You may delete your Customer Data at any time through your account settings. Upon account deletion, we will delete your data in accordance with our Privacy Policy and data retention policies.</p>
+
+        <h2 id="ai-features">7. AI Features and Limitations</h2>
+
+        <h3>7.1 AI-Generated Content</h3>
+        <p>tranzyNote uses artificial intelligence to provide meeting assistance, transcription, and content generation. You acknowledge that:</p>
+        <ul>
+            <li>AI-generated content may contain inaccuracies or errors</li>
+            <li>You should review and verify all AI-generated content before relying on it</li>
+            <li>We do not guarantee the accuracy, completeness, or reliability of AI-generated content</li>
+            <li>AI outputs should not be used as a substitute for professional advice</li>
+        </ul>
+
+        <h3>7.2 Transcription Accuracy</h3>
+        <p>While we strive for high transcription accuracy, factors such as audio quality, accents, background noise, and technical terminology may affect transcription quality. We do not guarantee 100% accuracy.</p>
+
+        <h2 id="termination">8. Termination</h2>
+
+        <h3>8.1 Termination by You</h3>
+        <p>You may terminate your account at any time by contacting customer support or through your account settings. Termination does not entitle you to a refund of any prepaid fees.</p>
+
+        <h3>8.2 Termination by tranzyNote</h3>
+        <p>We reserve the right to suspend or terminate your account immediately, without prior notice, if you:</p>
+        <ul>
+            <li>Violate these Terms of Service</li>
+            <li>Engage in fraudulent or illegal activity</li>
+            <li>Fail to pay applicable fees</li>
+            <li>Abuse or misuse our services</li>
+        </ul>
+
+        <h3>8.3 Effect of Termination</h3>
+        <p>Upon termination, your right to access and use the services immediately ceases. We may delete your Customer Data in accordance with our data retention policies.</p>
+
+        <h2 id="disclaimers">9. Disclaimers and Limitations</h2>
+
+        <h3>9.1 Disclaimer of Warranties</h3>
+        <div class="warning-box">
+            <p><strong>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR COURSE OF PERFORMANCE.</strong></p>
+        </div>
+
+        <h3>9.2 Limitation of Liability</h3>
+        <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, TRANZYNOTE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS, LOST DATA, OR BUSINESS INTERRUPTION, ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICES.</strong></p>
+
+        <p>Our total liability to you for all claims arising from your use of the services shall not exceed the amount you paid to tranzyNote in the 12 months preceding the claim.</p>
+
+        <h3>9.3 Indemnification</h3>
+        <p>You agree to indemnify and hold tranzyNote harmless from any claims, damages, losses, liabilities, and expenses (including attorneys' fees) arising from your use of the services or violation of these terms.</p>
+
+        <h3>9.4 Governing Law</h3>
+        <p>These terms are governed by the laws of India. Any disputes shall be resolved in the courts of India.</p>
+
+        <h2 id="contact">10. Contact Information</h2>
+
+        <p>If you have questions about these Terms of Service, please contact us:</p>
+
+        <div class="highlight-box">
+            <p style="margin-bottom: 0.5rem;"><strong>Support:</strong> <a href="mailto:all@darshix.com" style="color: var(--primary-600); text-decoration: none;">all@darshix.com</a></p>
+        </div>
+
+        <h3>Changes to These Terms</h3>
+        <p>We reserve the right to modify these Terms of Service at any time. We will notify you of material changes by posting the updated terms on this page and updating the "Last Updated" date. Your continued use of the services after changes become effective constitutes acceptance of the modified terms.</p>
+
+        <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gray-200);">
+            <a href="index.html" style="color: var(--primary-600); text-decoration: none; font-weight: 600;">← Back to Home</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="color: var(--gray-400); font-size: 0.875rem;">© 2026 Darshix • All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

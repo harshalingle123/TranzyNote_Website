@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TranzyNote Pricing - Flexible plans for every meeting need">
+    <title>TranzyNote Pricing - Choose Your Plan</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Brand Colors */
+            --primary-600: #6366F1;
+            --primary-700: #5558E3;
+            --primary-800: #4F46E5;
+            --secondary-600: #8B5CF6;
+            --secondary-700: #7C3AED;
+
+            /* Neutral Colors */
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-600) 0%, var(--secondary-600) 100%);
+            --gradient-hero: linear-gradient(180deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-display: 'Space Grotesk', 'Inter', sans-serif;
+
+            /* Animation */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Layout */
+            --container-max: 1280px;
+            --border-radius-sm: 0.375rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 0.75rem;
+            --border-radius-xl: 1rem;
+            --border-radius-2xl: 1.5rem;
+        }
+
+        /* ===== GLOBAL STYLES ===== */
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--gray-800);
+            background-color: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background-color: rgba(99, 102, 241, 0.2);
+            color: var(--gray-900);
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            border-radius: var(--border-radius-lg);
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-base);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .pricing-hero {
+            position: relative;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(249, 250, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            overflow: hidden;
+        }
+
+        .pricing-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .pricing-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary-600);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pricing-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-hero p {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===== PRICING TABS ===== */
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 3rem 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 0.875rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            background: white;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .tab-button:hover {
+            border-color: var(--primary-600);
+            color: var(--primary-600);
+        }
+
+        .tab-button.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        /* ===== PRICING GRID ===== */
+        .pricing-section {
+            padding: 2rem 0 6rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            position: relative;
+            background: white;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-2xl);
+            padding: 2.5rem 2rem;
+            transition: all var(--transition-base);
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .pricing-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-600);
+            border-width: 2px;
+        }
+
+        .pricing-card.featured::after {
+            content: 'Most Popular';
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            padding: 0.375rem 0.875rem;
+            background: var(--gradient-primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 9999px;
+        }
+
+        .pricing-header {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 2rem;
+        }
+
+        .plan-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-subtitle {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-700);
+        }
+
+        .amount {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            line-height: 1;
+        }
+
+        .plan-duration {
+            font-size: 0.9375rem;
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-cta {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 1rem;
+            background: var(--gray-900);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-lg);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-cta:hover {
+            background: var(--gray-800);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured .pricing-cta {
+            background: var(--gradient-primary);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .pricing-card.featured .pricing-cta:hover {
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .pricing-features {
+            position: relative;
+            z-index: 1;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            color: var(--primary-600);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== COMPARISON TABLE ===== */
+        .comparison-section {
+            padding: 6rem 0;
+            background: var(--gray-50);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary-600);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--gray-900);
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: var(--border-radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .comparison-table th {
+            background: var(--gray-50);
+            font-weight: 700;
+            color: var(--gray-900);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background: var(--gray-50);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 6rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .pricing-hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+        }
+
+        /* ===== TAB CONTENT ===== */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar-nav {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 1.5rem 1rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+        }
+
+        .sidebar-nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-nav-item {
+            position: relative;
+        }
+
+        .sidebar-nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--gray-500);
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all var(--transition-base);
+            text-align: center;
+        }
+
+        .sidebar-nav-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--gray-100);
+            transition: all var(--transition-base);
+        }
+
+        .sidebar-nav-link:hover {
+            color: var(--primary-600);
+        }
+
+        .sidebar-nav-link:hover .sidebar-nav-icon {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            transform: scale(1.1);
+        }
+
+        .sidebar-nav-link.active {
+            color: var(--primary-600);
+        }
+
+        .sidebar-nav-link.active .sidebar-nav-icon {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar-nav">
+        <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+                <a href="#hourly" class="sidebar-nav-link active" data-section="hourly">
+                    <div class="sidebar-nav-icon">⏰</div>
+                    <span>Hourly</span>
+                </a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a href="#unlimited" class="sidebar-nav-link" data-section="unlimited">
+                    <div class="sidebar-nav-icon">♾️</div>
+                    <span>Unlimited</span>
+                </a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a href="#payg" class="sidebar-nav-link" data-section="payg">
+                    <div class="sidebar-nav-icon">⚡</div>
+                    <span>Pay/Go</span>
+                </a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a href="#comparison" class="sidebar-nav-link" data-section="comparison">
+                    <div class="sidebar-nav-icon">📊</div>
+                    <span>Compare</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="logo.ico" alt="tranzyNote Logo" width="40" height="40">
+                    <span class="logo-text">tranzyNote</span>
+                </a>
+                <div style="display: flex; align-items: center; gap: 1.5rem;">
+                    <a href="index.html" style="color: var(--gray-700); text-decoration: none; font-weight: 600; font-size: 0.9375rem; transition: color var(--transition-base);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-700)'">
+                        ← Back to Home
+                    </a>
+                    <a href="https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe" class="btn btn-primary">
+                        Get for Windows
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pricing-hero">
+        <div class="container">
+            <div class="pricing-hero-content">
+                <div class="pricing-badge">💎 Flexible Pricing</div>
+                <h1>Choose the <span class="gradient-text">Perfect Plan</span> for You</h1>
+                <p>Flexible practice time and access options designed for every meeting need and budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Tabs -->
+    <div class="container">
+        <div class="pricing-tabs">
+            <button class="tab-button active" data-tab="hourly">Hourly Bundles</button>
+            <button class="tab-button" data-tab="unlimited">Unlimited Plans</button>
+            <button class="tab-button" data-tab="payg">Pay As You Go</button>
+        </div>
+    </div>
+
+    <!-- Hourly Bundles -->
+    <section class="pricing-section tab-content active" id="hourly">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- 5 Hour Bundle -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">5 Hour Bundle</h3>
+                        <p class="plan-subtitle">Best for casual practice</p>
+                        <div class="plan-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">499</span>
+                        </div>
+                        <p class="plan-duration">₹1.66 per minute</p>
+                    </div>
+                    <button class="pricing-cta">Purchase Now</button>
+                    <ul class="pricing-features">
+                        <li>5 hours (300 minutes) of practice</li>
+                        <li>30-day validity period</li>
+                        <li>All features included</li>
+                        <li>Perfect for occasional users</li>
+                    </ul>
+                </div>
+
+                <!-- 10 Hour Bundle -->
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">10 Hour Bundle</h3>
+                        <p class="plan-subtitle">Most popular choice</p>
+                        <div class="plan-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">899</span>
+                        </div>
+                        <p class="plan-duration">₹1.50 per minute</p>
+                    </div>
+                    <button class="pricing-cta">Purchase Now</button>
+                    <ul class="pricing-features">
+                        <li>10 hours (600 minutes) of practice</li>
+                        <li>30-day validity period</li>
+                        <li>All features included</li>
+                        <li>Great value for regular users</li>
+                        <li>Save ₹100 vs 5-hour plan</li>
+                    </ul>
+                </div>
+
+                <!-- 25 Hour Bundle -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">25 Hour Bundle</h3>
+                        <p class="plan-subtitle">Best value option</p>
+                        <div class="plan-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">1999</span>
+                        </div>
+                        <p class="plan-duration">₹1.33 per minute</p>
+                    </div>
+                    <button class="pricing-cta">Purchase Now</button>
+                    <ul class="pricing-features">
+                        <li>25 hours (1500 minutes) of practice</li>
+                        <li>30-day validity period</li>
+                        <li>All features included</li>
+                        <li>Maximum savings per minute</li>
+                        <li>Best for intensive preparation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unlimited Plans -->
+    <section class="pricing-section tab-content" id="unlimited">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- 1-Day Unlimited -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">1-Day Unlimited</h3>
+                        <p class="plan-subtitle">Perfect for interview prep</p>
+                        <div class="plan-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">99</span>
+                        </div>
+                        <p class="plan-duration">24-hour access</p>
+                    </div>
+                    <button class="pricing-cta">Purchase Now</button>
+                    <ul class="pricing-features">
+                        <li>Unlimited practice for 1 day</li>
+                        <li>Up to 5 hours per day</li>
+                        <li>All features included</li>
+                        <li>Great for last-minute prep</li>
+                    </ul>
+                </div>
+
+                <!-- 7-Day Unlimited -->
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">7-Day Unlimited</h3>
+                        <p class="plan-subtitle">Intensive preparation</p>
+                        <div class="plan-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">499</span>
+                        </div>
+                        <p class="plan-duration">7-day access</p>
+                    </div>
+                    <button class="pricing-cta">Purchase Now</button>
+                    <ul class="pricing-features">
+                        <li>Unlimited practice for 1 week</li>
+                        <li>Up to 4 hours per day</li>
+                        <li>All features included</li>
+                        <li>Perfect for focused prep week</li>
+                        <li>Best value for week-long access</li>
+                    </ul>
+                </div>
+
+                <!-- 30-Day Unlimited -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">30-Day Unlimited</h3>
+                        <p class="plan-subtitle">Full month access</p>
+                        <div class="plan-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">1499</span>
+                        </div>
+                        <p class="plan-duration">30-day access</p>
+                    </div>
+                    <button class="pricing-cta">Purchase Now</button>
+                    <ul class="pricing-features">
+                        <li>Unlimited practice for 1 month</li>
+                        <li>Up to 3.5 hours per day</li>
+                        <li>All features included</li>
+                        <li>Maximum flexibility</li>
+                        <li>Best for long-term preparation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pay As You Go -->
+    <section class="pricing-section tab-content" id="payg">
+        <div class="container">
+            <div class="pricing-grid" style="max-width: 600px;">
+                <!-- Pay As You Go -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Pay As You Go</h3>
+                        <p class="plan-subtitle">Ultimate flexibility</p>
+                        <div class="plan-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">2</span>
+                            <span style="font-size: 1.25rem; color: var(--gray-600); font-weight: 600;">/min</span>
+                        </div>
+                        <p class="plan-duration">Recharge any amount</p>
+                    </div>
+                    <button class="pricing-cta">Recharge Now</button>
+                    <ul class="pricing-features">
+                        <li>No commitment required</li>
+                        <li>Recharge any amount anytime</li>
+                        <li>30-day validity from recharge</li>
+                        <li>Example: ₹500 = 250 minutes</li>
+                        <li>Perfect for trying the service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section" id="comparison">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Comparison</span>
+                <h2 class="section-title">Compare All <span class="gradient-text">Plans</span></h2>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plan</th>
+                            <th>Practice Time</th>
+                            <th>Validity</th>
+                            <th>Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>5 Hour Bundle</strong></td>
+                            <td>5 Hours (300 min)</td>
+                            <td>30 Days</td>
+                            <td>₹1.66/min</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10 Hour Bundle</strong></td>
+                            <td>10 Hours (600 min)</td>
+                            <td>30 Days</td>
+                            <td>₹1.50/min</td>
+                        </tr>
+                        <tr>
+                            <td><strong>25 Hour Bundle</strong></td>
+                            <td>25 Hours (1500 min)</td>
+                            <td>30 Days</td>
+                            <td>₹1.33/min</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1-Day Unlimited</strong></td>
+                            <td>Unlimited (up to 5 hrs/day)</td>
+                            <td>1 Day</td>
+                            <td>₹99 total</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7-Day Unlimited</strong></td>
+                            <td>Unlimited (up to 4 hrs/day)</td>
+                            <td>7 Days</td>
+                            <td>₹499 total</td>
+                        </tr>
+                        <tr>
+                            <td><strong>30-Day Unlimited</strong></td>
+                            <td>Unlimited (up to 3.5 hrs/day)</td>
+                            <td>30 Days</td>
+                            <td>₹1499 total</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pay As You Go</strong></td>
+                            <td>Recharge Anytime</td>
+                            <td>30 Days</td>
+                            <td>₹2/min</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to <span class="gradient-text">Transform</span> Your Meetings?</h2>
+                <p>Start with our free trial and experience the power of AI-assisted meetings.</p>
+                <a href="https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.125rem;">
+                    Start Free 30Min Trial
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <div class="container" style="padding: 3rem 2rem 2rem; text-align: center;">
+        <a href="index.html" style="color: var(--primary-600); text-decoration: none; font-weight: 600; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all var(--transition-base);" onmouseover="this.style.transform='translateX(-4px)'" onmouseout="this.style.transform='translateX(0)'">
+            ← Back to Home
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Darshix • All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Tabs and Sidebar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav-link');
+
+            // Tab functionality
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    // Show corresponding content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+
+                    // Update sidebar active state
+                    updateSidebarActive(tabId);
+                });
+            });
+
+            // Sidebar navigation
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const section = link.getAttribute('data-section');
+
+                    // Update sidebar active state
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    // If clicking on hourly, unlimited, or payg - activate the corresponding tab
+                    if (section !== 'comparison') {
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.classList.remove('active'));
+
+                        const tabBtn = document.querySelector(`[data-tab="${section}"]`);
+                        if (tabBtn) {
+                            tabBtn.classList.add('active');
+                            document.getElementById(section).classList.add('active');
+                        }
+                    }
+
+                    // Scroll to section
+                    const targetSection = document.getElementById(section);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Function to update sidebar active state based on visible section
+            function updateSidebarActive(section) {
+                sidebarLinks.forEach(link => {
+                    if (link.getAttribute('data-section') === section) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            // Intersection Observer to update sidebar based on scroll position
+            const sections = document.querySelectorAll('.tab-content, .comparison-section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        updateSidebarActive(sectionId);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                if (section.id) {
+                    observer.observe(section);
+                }
+            });
+
+            // Purchase Now button functionality
+            const purchaseButtons = document.querySelectorAll('.pricing-cta');
+            purchaseButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Try to open TranzyNote application
+                    const appUrl = 'tranzynote://open';
+                    const downloadUrl = 'https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe';
+
+                    // Create hidden iframe to try opening the app
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = appUrl;
+                    document.body.appendChild(iframe);
+
+                    // Set a timeout to start download if app doesn't open
+                    setTimeout(() => {
+                        document.body.removeChild(iframe);
+                        // If we reach here, the app likely isn't installed
+                        // Start the download
+                        window.location.href = downloadUrl;
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

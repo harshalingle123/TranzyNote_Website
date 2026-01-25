@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TranzyNote Support</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f8ff;
+      color: #111;
+    }
+
+    /* Navbar */
+    header {
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.06);
+    }
+
+    header h2 {
+      font-weight: bold;
+    }
+
+    header a {
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    header a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* Support Container */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* FAQ Cards */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .faq-card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .faq-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .faq-card p {
+      color: #444;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-box {
+      margin-top: 70px;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0px 12px 30px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-box h2 {
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 14px;
+      background: #2563eb;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 8px 25px rgba(37,99,235,0.3);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h2>TranzyNote</h2>
+    <div style="display: flex; gap: 15px;">
+      <a href="help-center.html" style="background: transparent; color: #2563eb; border: 2px solid #2563eb;">Help Center</a>
+      <a href="index.html">Back to Home</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Support Center</h1>
+    <p>
+      Need help using TranzyNote?  
+      Our team is here to assist you with setup, billing, and technical issues
+      so your meeting experience stays seamless.
+    </p>
+  </section>
+
+  <!-- FAQ Section -->
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-grid">
+
+      <div class="faq-card">
+        <h3>How do I activate my voucher?</h3>
+        <p>
+          Once you purchase a plan, your voucher balance is automatically added
+          to your dashboard and starts tracking practice time instantly.
+        </p>
+      </div>
+
+      <div class="faq-card">
+        <h3>Does TranzyNote work during live meeting?</h3>
+        <p>
+          Yes. TranzyNote provides real-time AI support during calls,
+          helping you respond confidently without switching tabs.
+        </p>
+      </div>
+
+      <div class="faq-card">
+        <h3>Can I upgrade my plan anytime?</h3>
+        <p>
+          Absolutely. You can upgrade from hourly bundles to unlimited plans
+          at any time from your account settings.
+        </p>
+      </div>
+
+      <div class="faq-card">
+        <h3>What happens if my time runs out?</h3>
+        <p>
+          TranzyNote will pause your session when balance ends and notify you
+          before it expires so you never lose progress.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Contact Support -->
+    <div class="contact-box">
+
+      <!-- Left Info -->
+      <div>
+        <h2>Contact Support</h2>
+        <p>
+          Still need help? Reach out to us directly.  
+          Our support team replies within 24 hours.
+        </p>
+
+        <p><strong>Email:</strong> all@darshix.com</p>
+        <p><strong>Availability:</strong> 24/7 for critical issues</p>
+      </div>
+
+      <!-- Support Form -->
+      <form id="supportForm">
+        <input type="text" id="userName" placeholder="Your Name" required>
+        <input type="email" id="userEmail" placeholder="Your Email" required>
+        <textarea rows="5" id="userMessage" placeholder="Describe your issue..." required></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Darshix • Support Center • All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById('supportForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('userName').value;
+      const email = document.getElementById('userEmail').value;
+      const message = document.getElementById('userMessage').value;
+
+      const subject = encodeURIComponent('Support Request  - TranzyNote');
+      const body = encodeURIComponent(
+                        "Hi Team,\n\n" +
+                        message + "\n\n" +
+                        "Thanks,\n" +
+                        name + "\n" +
+                        email
+                    );
+
+      window.location.href = 'mailto:all@darshix.com?subject=' + subject + '&body=' + body;
+
+      // Show confirmation
+      alert('Opening your application to send the message...');
+
+      // Reset form
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

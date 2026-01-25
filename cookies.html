@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="tranzyNote Cookie Policy - How we use cookies and tracking technologies">
+    <title>Cookie Policy | tranzyNote</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Additional page-specific styles */
+        .policy-hero {
+            padding: 10rem 0 4rem;
+            background: linear-gradient(180deg, rgba(249, 250, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policy-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
+        }
+
+        .policy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        .policy-content h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            scroll-margin-top: 100px;
+        }
+
+        .policy-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content p {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-content ul, .policy-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .policy-content li {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 0.75rem;
+        }
+
+        .policy-content strong {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        .policy-toc {
+            background: var(--gray-50);
+            border-radius: var(--border-radius-xl);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--primary-600);
+        }
+
+        .policy-toc h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .policy-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .policy-toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-toc a {
+            color: var(--primary-600);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-base);
+        }
+
+        .policy-toc a:hover {
+            color: var(--primary-700);
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border-left: 4px solid var(--primary-600);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cookie-table th {
+            background: var(--gray-50);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--gray-900);
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        .cookie-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--gray-700);
+        }
+
+        .cookie-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cookie-table tr:hover {
+            background: var(--gray-50);
+        }
+
+        .last-updated {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo" aria-label="tranzyNote Home">
+                    <img src="logo.ico" alt="tranzyNote Logo" width="40" height="40">
+                    <span class="logo-text">tranzyNote</span>
+                </a>
+                <div class="nav-actions">
+                    <a href="payment.html" class="btn btn-primary">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="policy-hero">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1;">
+                <h1 class="hero-title" style="margin-bottom: 1rem;">
+                    Cookie <span class="gradient-text">Policy</span>
+                </h1>
+                <p class="hero-subtitle" style="margin-bottom: 0;">
+                    Learn how we use cookies and similar technologies to enhance your experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
+    <div class="policy-content">
+        <div class="last-updated">Last Updated: January 25, 2026</div>
+
+        <div class="policy-toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#what-are-cookies">1. What Are Cookies?</a></li>
+                <li><a href="#how-we-use">2. How We Use Cookies</a></li>
+                <li><a href="#types-of-cookies">3. Types of Cookies We Use</a></li>
+                <li><a href="#third-party">4. Third-Party Cookies</a></li>
+                <li><a href="#managing">5. Managing Cookie Preferences</a></li>
+                <li><a href="#contact">6. Contact Us</a></li>
+            </ul>
+        </div>
+
+        <p>This Cookie Policy explains how tranzyNote ("we", "us", "our") uses cookies and similar tracking technologies when you visit our website and use our services. This policy should be read in conjunction with our Privacy Policy.</p>
+
+        <h2 id="what-are-cookies">1. What Are Cookies?</h2>
+
+        <p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently, provide a better user experience, and gather information about website usage.</p>
+
+        <h3>1.1 Types of Technologies</h3>
+        <p>In addition to cookies, we may use similar technologies such as:</p>
+        <ul>
+            <li><strong>Web Beacons:</strong> Small graphic images embedded in web pages or emails to track user activity</li>
+            <li><strong>Local Storage:</strong> Technology that allows websites to store data locally in your browser</li>
+            <li><strong>Session Storage:</strong> Temporary storage that is cleared when you close your browser</li>
+            <li><strong>Pixels:</strong> Tiny graphics used to track user behavior and conversions</li>
+        </ul>
+
+        <h2 id="how-we-use">2. How We Use Cookies</h2>
+
+        <p>We use cookies and similar technologies for the following purposes:</p>
+
+        <ul>
+            <li><strong>Essential Functions:</strong> To enable core website functionality and secure user authentication</li>
+            <li><strong>Security:</strong> To protect against fraudulent activity and enhance platform security</li>
+            <li><strong>Performance Monitoring:</strong> To analyze how our website and services are performing</li>
+            <li><strong>User Preferences:</strong> To remember your settings, preferences, and login state</li>
+            <li><strong>Analytics:</strong> To understand how visitors interact with our website and improve user experience</li>
+            <li><strong>Service Delivery:</strong> To provide the tranzyNote desktop application and meeting assistant features</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>Important Note:</strong> We do not use cookies for advertising purposes or to track you across other websites. Our cookies are strictly used to improve your tranzyNote experience and provide our services.</p>
+        </div>
+
+        <h2 id="types-of-cookies">3. Types of Cookies We Use</h2>
+
+        <p>We use the following categories of cookies:</p>
+
+        <table class="cookie-table">
+            <thead>
+                <tr>
+                    <th>Cookie Type</th>
+                    <th>Purpose</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Strictly Necessary</strong></td>
+                    <td>Required for the website to function. Enable core features like security, login, and account access. Cannot be disabled.</td>
+                    <td>Session / Persistent</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Help us understand how visitors use our site by collecting anonymous usage statistics and performance data.</td>
+                    <td>Up to 2 years</td>
+                </tr>
+                <tr>
+                    <td><strong>Functional</strong></td>
+                    <td>Remember your preferences, settings, and choices to provide an enhanced and personalized experience.</td>
+                    <td>Up to 1 year</td>
+                </tr>
+                <tr>
+                    <td><strong>Analytics</strong></td>
+                    <td>Collect information about how you use our services to help us improve features and user experience.</td>
+                    <td>Up to 2 years</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3.1 Session vs. Persistent Cookies</h3>
+        <ul>
+            <li><strong>Session Cookies:</strong> Temporary cookies that are deleted when you close your browser. These are essential for maintaining your login session.</li>
+            <li><strong>Persistent Cookies:</strong> Remain on your device for a set period or until you delete them. These help us remember your preferences across visits.</li>
+        </ul>
+
+        <h2 id="third-party">4. Third-Party Cookies</h2>
+
+        <p>Some cookies on our site are set by trusted third-party service providers that we use to deliver our services:</p>
+
+        <h3>4.1 Analytics Providers</h3>
+        <p>We may use analytics services (such as Google Analytics) to understand how users interact with our website. These services use cookies to collect anonymous information about your visit.</p>
+
+        <h3>4.2 Authentication Services</h3>
+        <p>We use secure authentication providers for login functionality. These providers may set cookies to maintain your secure session.</p>
+
+        <h3>4.3 Payment Processors</h3>
+        <p>When you make a purchase, payment processors (such as Stripe or Razorpay) may set cookies to facilitate secure payment transactions.</p>
+
+        <h3>4.4 Hosting and Infrastructure</h3>
+        <p>Our hosting providers may use cookies for load balancing, performance optimization, and security purposes.</p>
+
+        <p><strong>Note:</strong> Third-party cookies are subject to the privacy policies of those third parties. We carefully select our service providers and ensure they meet our privacy and security standards.</p>
+
+        <h2 id="managing">5. Managing Cookie Preferences</h2>
+
+        <h3>5.1 Browser Controls</h3>
+        <p>Most web browsers allow you to control cookies through their settings. You can:</p>
+        <ul>
+            <li>View what cookies are stored on your device</li>
+            <li>Delete all cookies or specific cookies</li>
+            <li>Block all cookies or cookies from specific websites</li>
+            <li>Set your browser to notify you when a cookie is set</li>
+        </ul>
+
+        <h3>5.2 How to Disable Cookies</h3>
+        <p>You can disable cookies by adjusting your browser settings. Here's how for popular browsers:</p>
+        <ul>
+            <li><strong>Chrome:</strong> Settings > Privacy and security > Cookies and other site data</li>
+            <li><strong>Firefox:</strong> Options > Privacy & Security > Cookies and Site Data</li>
+            <li><strong>Safari:</strong> Preferences > Privacy > Cookies and website data</li>
+            <li><strong>Edge:</strong> Settings > Cookies and site permissions > Cookies and site data</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>Important:</strong> If you disable cookies, some features of tranzyNote may not function properly. Strictly necessary cookies are required for the website to work and cannot be disabled without affecting functionality.</p>
+        </div>
+
+        <h3>5.3 Do Not Track</h3>
+        <p>Some browsers include a "Do Not Track" (DNT) feature that signals to websites that you do not want your online activity tracked. We respect DNT signals and will not track users who have DNT enabled, except for essential cookies required for website functionality.</p>
+
+        <h3>5.4 Mobile Devices</h3>
+        <p>For mobile devices, you can manage cookie preferences through your device settings or browser app settings. Refer to your device manufacturer's instructions for specific guidance.</p>
+
+        <h2 id="contact">6. Contact Us</h2>
+
+        <p>If you have questions about our use of cookies or this Cookie Policy, please contact us:</p>
+
+        <div class="highlight-box">
+            <p style="margin-bottom: 0.5rem;"><strong>Support:</strong> <a href="mailto:all@darshix.com" style="color: var(--primary-600); text-decoration: none;">all@darshix.com</a></p>
+        </div>
+
+        <h3>Changes to This Policy</h3>
+        <p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our business practices. We will post any updates on this page and update the "Last Updated" date at the top of this policy.</p>
+
+        <p>We encourage you to review this Cookie Policy periodically to stay informed about how we use cookies.</p>
+
+        <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gray-200);">
+            <a href="index.html" style="color: var(--primary-600); text-decoration: none; font-weight: 600;">← Back to Home</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="color: var(--gray-400); font-size: 0.875rem;">© 2026 Darshix • All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
