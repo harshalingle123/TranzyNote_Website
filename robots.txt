@@ -1,0 +1,8 @@
+# TranzyNote Website - robots.txt
+# https://tranzynote.darshix.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tranzynote.darshix.com/sitemap.xml
