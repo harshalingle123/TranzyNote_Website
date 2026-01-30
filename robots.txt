@@ -1,8 +1,25 @@
 # TranzyNote Website - robots.txt
 # https://tranzynote.darshix.com
 
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Sitemap
+# Specific instructions for Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Specific instructions for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block common unnecessary files
+Disallow: /nul
+
+# Sitemap location
 Sitemap: https://tranzynote.darshix.com/sitemap.xml
+
+# Host directive
+Host: https://tranzynote.darshix.com
