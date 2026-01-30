@@ -2,6 +2,22 @@
    Production-Grade tranzyNote Styles
    ================================ */
 
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+/* Reduce motion for users who prefer it & improve performance */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* GPU acceleration for animated elements */
+.gradient-orb, .loader-ring, .typing-indicator span, .card-shimmer {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
 /* ===== CSS RESET & BASE ===== */
 *,
 *::before,

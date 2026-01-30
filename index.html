@@ -394,13 +394,29 @@
 
     <!-- Preload critical assets -->
     <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="poster-1.jpg" as="image">
 
-    <!-- Fonts -->
+    <!-- Fonts - Optimized with display=swap for faster rendering -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- Critical CSS inline for faster FCP -->
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary-600:#6366F1;--gray-900:#111827;--gray-600:#4B5563}
+        body{font-family:'Inter',system-ui,sans-serif;color:#1F2937;background:#FFF}
+        .loading-screen{position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center}
+        .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px)}
+        .container{max-width:1280px;margin:0 auto;padding:0 2rem}
+        .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+    </style>
+
+    <!-- Main stylesheet - loaded async -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 <body>
     <!-- SVG Gradient Definitions -->
@@ -735,7 +751,7 @@
                     </div>
                     <div class="timeline-visual">
                         <div class="visual-card">
-                            <video src="recording-1.mp4" poster="poster-1.jpg" alt="Install & Connect Demo" class="timeline-gif" autoplay muted loop playsinline preload="auto"></video>
+                            <video src="recording-1.mp4" poster="poster-1.jpg" alt="Install & Connect Demo" class="timeline-gif" autoplay muted loop playsinline preload="none" loading="lazy" width="560" height="315"></video>
                             <div class="card-shimmer"></div>
                         </div>
                     </div>
@@ -756,7 +772,7 @@
                     </div>
                     <div class="timeline-visual">
                         <div class="visual-card">
-                            <video src="recording-2.mp4" poster="poster-2.jpg" alt="Join Your Meeting Demo" class="timeline-gif" autoplay muted loop playsinline preload="auto"></video>
+                            <video src="recording-2.mp4" poster="poster-2.jpg" alt="Join Your Meeting Demo" class="timeline-gif" autoplay muted loop playsinline preload="none" loading="lazy" width="560" height="315"></video>
                             <div class="card-shimmer"></div>
                         </div>
                     </div>
@@ -776,7 +792,7 @@
                     </div>
                     <div class="timeline-visual">
                         <div class="visual-card">
-                            <video src="recording-3.mp4" poster="poster-3.jpg" alt="Get Instant Results Demo" class="timeline-gif" autoplay muted loop playsinline preload="auto"></video>
+                            <video src="recording-3.mp4" poster="poster-3.jpg" alt="Get Instant Results Demo" class="timeline-gif" autoplay muted loop playsinline preload="none" loading="lazy" width="560" height="315"></video>
                             <div class="card-shimmer"></div>
                         </div>
                     </div>
@@ -1067,7 +1083,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
     <!-- Azure Application Insights - Loads after page render -->
     <script>
