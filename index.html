@@ -56,10 +56,15 @@
         "alternateName": ["tranzyNote", "TranzyNote AI", "Tranzy Note"],
         "description": "The #1 undetectable AI-powered meeting assistant for 2026. Get real-time AI copilot support, automatic transcription with 99.8% accuracy, and perfect meeting notes. Works invisibly with Zoom, Google Meet, Microsoft Teams, and more.",
         "url": "https://tranzynote.darshix.com",
-        "downloadUrl": "https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe",
+        "downloadUrl": [
+            "https://tranzynotestorage.blob.core.windows.net/releases/windows/TranzyNote-Setup-latest.exe",
+            "https://tranzynotestorage.blob.core.windows.net/releases/macos/TranzyNote-latest-arm64.dmg",
+            "https://tranzynotestorage.blob.core.windows.net/releases/macos/TranzyNote-latest-x64.dmg",
+            "https://tranzynotestorage.blob.core.windows.net/releases/linux/TranzyNote-latest.AppImage"
+        ],
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "Productivity",
-        "operatingSystem": "Windows 10, Windows 11",
+        "operatingSystem": "Windows 10, Windows 11, macOS 12 Monterey, macOS 13 Ventura, macOS 14 Sonoma, macOS 15 Sequoia, Linux (Ubuntu 20.04+, Fedora 38+)",
         "softwareVersion": "1.0",
         "datePublished": "2025-11-01",
         "offers": {
@@ -150,7 +155,7 @@
                 "name": "What platforms does tranzyNote support?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "tranzyNote works with all major platforms: Zoom, Microsoft Teams, Google Meet, Webex, Slack Huddles, and any application that plays audio. Available for Windows."
+                    "text": "tranzyNote works with all major platforms: Zoom, Microsoft Teams, Google Meet, Webex, Slack Huddles, and any application that plays audio. Available for Windows, macOS, and Linux."
                 }
             },
             {
@@ -296,7 +301,7 @@
         "supply": [
             {
                 "@type": "HowToSupply",
-                "name": "Windows PC (Windows 10 or later)"
+                "name": "Windows PC (Windows 10+), Mac (macOS 12+), or Linux PC (Ubuntu 20.04+)"
             },
             {
                 "@type": "HowToSupply",
@@ -318,7 +323,7 @@
                 "@type": "HowToStep",
                 "position": 1,
                 "name": "Install & Connect",
-                "text": "Download tranzyNote for Windows from the official website. Run the installer and connect with your preferred meeting platforms in seconds.",
+                "text": "Download tranzyNote for your operating system from the official website. Run the installer and connect with your preferred meeting platforms in seconds.",
                 "image": "https://tranzynote.darshix.com/poster-1.jpg",
                 "url": "https://tranzynote.darshix.com/#how-it-works"
             },
@@ -477,14 +482,14 @@
                 </p>
 
                 <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
-                    <a href="https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe" class="btn btn-primary btn-lg">
+                    <a href="https://tranzynotestorage.blob.core.windows.net/releases/windows/TranzyNote-Setup-latest.exe" class="btn btn-primary btn-lg" data-download="trial">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M10 2C5.58 2 2 5.58 2 10C2 14.42 5.58 18 10 18C14.42 18 18 14.42 18 10C18 5.58 14.42 2 10 2Z" fill="currentColor" opacity="0.2"/>
                             <path d="M8 6L14 10L8 14V6Z" fill="currentColor"/>
                         </svg>
                         <span>Start free 30Min trial</span>
                     </a>
-                    <a href="https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe" class="btn btn-outline btn-lg">
+                    <a href="https://tranzynotestorage.blob.core.windows.net/releases/windows/TranzyNote-Setup-latest.exe" class="btn btn-outline btn-lg" data-download="primary" data-download-text="os">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <rect x="3" y="3" width="6" height="6" fill="currentColor"/>
                             <rect x="11" y="3" width="6" height="6" fill="currentColor"/>
@@ -494,6 +499,7 @@
                         <span>Get for Windows</span>
                     </a>
                 </div>
+                <div class="platform-links" data-aos="fade-up" data-aos-delay="350"></div>
 
                 <div class="platform-announcement" data-aos="fade-up" data-aos-delay="350">
                     <p class="animated-text" id="animatedText"></p>
@@ -731,7 +737,7 @@
                             </svg>
                         </div>
                         <h3>Install & Connect</h3>
-                        <p>Download tranzyNote for Windows. Connect with meeting platforms in seconds.</p>
+                        <p>Download tranzyNote for your platform. Connect with meeting platforms in seconds.</p>
                     </div>
                     <div class="timeline-visual">
                         <div class="visual-card">
@@ -957,7 +963,7 @@
                             </div>
                         </button>
                         <div class="faq-answer-modern">
-                            <p>tranzyNote works with all major platforms: Zoom, Microsoft Teams, Google Meet, Webex, Slack Huddles, and any application that plays audio. Available for Windows.</p>
+                            <p>tranzyNote works with all major platforms: Zoom, Microsoft Teams, Google Meet, Webex, Slack Huddles, and any application that plays audio. Available for Windows, macOS, and Linux.</p>
                         </div>
                     </div>
                 </div>
@@ -1067,6 +1073,7 @@
         </div>
     </footer>
 
+    <script src="platform-detect.js" defer></script>
     <script src="script.js" defer></script>
 
     <!-- Azure Application Insights - Loads after page render -->

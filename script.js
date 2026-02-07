@@ -308,7 +308,7 @@ class CounterAnimation {
 class AnimatedTextAnnouncement {
     constructor() {
         this.element = document.getElementById('animatedText');
-        this.text = '📢 Mac Version Arriving Soon | Mobile App Coming Next';
+        this.text = '📢 Now Available on Windows, macOS & Linux | Mobile App Coming Next';
         this.init();
     }
 

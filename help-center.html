@@ -1367,8 +1367,13 @@
                         </tr>
                         <tr>
                             <td><strong>macOS</strong></td>
-                            <td><span style="color: #f59e0b; font-weight: 600;">Coming Soon</span></td>
-                            <td>In development</td>
+                            <td><span style="color: #667eea; font-weight: 600;">✓ Available Now</span></td>
+                            <td>macOS 12 (Monterey) or later, Apple Silicon (M1/M2/M3/M4) or Intel, 4GB RAM, 300MB storage</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Linux</strong></td>
+                            <td><span style="color: #667eea; font-weight: 600;">✓ Available Now</span></td>
+                            <td>Ubuntu 20.04+, Fedora 38+, or equivalent, 4GB RAM, 300MB storage</td>
                         </tr>
                         <tr>
                             <td><strong>iOS</strong></td>
@@ -1417,7 +1422,7 @@
                                 <p>Open TranzyNote from your Start Menu or desktop shortcut.</p>
                             </div>
                         </div>
-                        <a href="https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe" class="btn-download" style="margin-top: 20px;">Download for Windows</a>
+                        <a href="https://tranzynotestorage.blob.core.windows.net/releases/windows/TranzyNote-Setup-latest.exe" class="btn-download" style="margin-top: 20px;">Download for Windows</a>
                     </div>
 
                     <div class="platform-card">
@@ -1425,10 +1430,65 @@
                             <img src="apple.ico" alt="Apple Logo" class="platform-icon">
                             <h4>macOS</h4>
                         </div>
-                        <div class="alert alert-warning">
-                            <strong>Coming Soon!</strong> macOS version is currently in development.
+                        <div class="step-grid">
+                            <div class="step-card">
+                                <div class="step-header">
+                                    <span class="step-number">1</span>
+                                    <h4 class="step-title">Download Installer</h4>
+                                </div>
+                                <p>Choose the correct version for your Mac below.</p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-header">
+                                    <span class="step-number">2</span>
+                                    <h4 class="step-title">Open the .dmg File</h4>
+                                </div>
+                                <p>Double-click the downloaded .dmg and drag TranzyNote to your Applications folder.</p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-header">
+                                    <span class="step-number">3</span>
+                                    <h4 class="step-title">Launch App</h4>
+                                </div>
+                                <p>Open TranzyNote from Applications. If macOS blocks it, go to System Settings > Privacy & Security and click "Open Anyway".</p>
+                            </div>
                         </div>
-                        <p style="margin-top: 16px; color: #6b7280;">We're working hard to bring TranzyNote to macOS. Sign up for updates to be notified when it's ready.</p>
+                        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+                            <a href="https://tranzynotestorage.blob.core.windows.net/releases/macos/TranzyNote-latest-arm64.dmg" class="btn-download">Download for Apple Silicon</a>
+                            <a href="https://tranzynotestorage.blob.core.windows.net/releases/macos/TranzyNote-latest-x64.dmg" class="btn-download" style="background: linear-gradient(135deg, #4b5563 0%, #374151 100%); box-shadow: 0 4px 15px rgba(75, 85, 99, 0.4);">Download for Intel Mac</a>
+                        </div>
+                        <p style="margin-top: 12px; font-size: 13px; color: #6b7280;">Not sure? Apple Silicon = M1 / M2 / M3 / M4 chips. Intel = older Macs (pre-2020).</p>
+                    </div>
+
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <img src="linux.png" alt="Linux" class="platform-icon" onerror="this.style.display='none'">
+                            <h4>Linux</h4>
+                        </div>
+                        <div class="step-grid">
+                            <div class="step-card">
+                                <div class="step-header">
+                                    <span class="step-number">1</span>
+                                    <h4 class="step-title">Download AppImage</h4>
+                                </div>
+                                <p>Download the AppImage file below.</p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-header">
+                                    <span class="step-number">2</span>
+                                    <h4 class="step-title">Make Executable</h4>
+                                </div>
+                                <p>Open a terminal and run: <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 4px;">chmod +x TranzyNote-latest.AppImage</code></p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-header">
+                                    <span class="step-number">3</span>
+                                    <h4 class="step-title">Run</h4>
+                                </div>
+                                <p>Double-click the AppImage or run <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 4px;">./TranzyNote-latest.AppImage</code> from terminal.</p>
+                            </div>
+                        </div>
+                        <a href="https://tranzynotestorage.blob.core.windows.net/releases/linux/TranzyNote-latest.AppImage" class="btn-download" style="margin-top: 20px;">Download for Linux</a>
                     </div>
 
                     <div class="platform-card">
@@ -1816,6 +1876,8 @@
             <a href="support.html">Contact Support</a>
         </p>
     </footer>
+
+    <script src="platform-detect.js" defer></script>
 
     <!-- JavaScript -->
     <script>

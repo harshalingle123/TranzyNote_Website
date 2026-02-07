@@ -775,7 +775,7 @@
                     <a href="index.html" style="color: var(--gray-700); text-decoration: none; font-weight: 600; font-size: 0.9375rem; transition: color var(--transition-base);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-700)'">
                         ← Back to Home
                     </a>
-                    <a href="https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe" class="btn btn-primary">
+                    <a href="https://tranzynotestorage.blob.core.windows.net/releases/windows/TranzyNote-Setup-latest.exe" class="btn btn-primary" data-download="primary" data-download-text="os">
                         Get for Windows
                     </a>
                 </div>
@@ -1043,7 +1043,7 @@
             <div class="cta-content">
                 <h2>Ready to <span class="gradient-text">Transform</span> Your Meetings?</h2>
                 <p>Start with our free trial and experience the power of AI-assisted meetings.</p>
-                <a href="https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.125rem;">
+                <a href="https://tranzynotestorage.blob.core.windows.net/releases/windows/TranzyNote-Setup-latest.exe" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.125rem;" data-download="trial">
                     Start Free 30Min Trial
                 </a>
             </div>
@@ -1070,6 +1070,8 @@
             <p>© 2026 Darshix • All Rights Reserved</p>
         </div>
     </footer>
+
+    <script src="platform-detect.js" defer></script>
 
     <!-- JavaScript for Tabs and Sidebar -->
     <script>
@@ -1167,7 +1169,9 @@
                 button.addEventListener('click', function() {
                     // Try to open TranzyNote application
                     const appUrl = 'tranzynote://open';
-                    const downloadUrl = 'https://tranzynotestorage.blob.core.windows.net/releases/TranzyNote-Setup-latest.exe';
+                    const downloadUrl = (window.TranzyPlatform && window.TranzyPlatform.downloadUrl)
+                        ? window.TranzyPlatform.downloadUrl
+                        : 'https://tranzynotestorage.blob.core.windows.net/releases/windows/TranzyNote-Setup-latest.exe';
 
                     // Create hidden iframe to try opening the app
                     const iframe = document.createElement('iframe');

@@ -1686,6 +1686,30 @@ body {
     }
 }
 
+/* ===== PLATFORM LINKS (Also available for...) ===== */
+.platform-links {
+    text-align: center;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+.other-platforms-text {
+    color: var(--gray-500);
+}
+
+.other-platforms-link {
+    color: var(--primary-600);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-base);
+}
+
+.other-platforms-link:hover {
+    color: var(--secondary-700);
+    text-decoration: underline;
+}
+
 /* ===== FOOTER ALIGNMENT FIX ===== */
 .footer-bottom {
     display: flex;
