@@ -27,6 +27,7 @@
 <body>
     <h1>📊 TranzyNote Analytics</h1>
     <button class="refresh" onclick="loadStats()">Refresh</button>
+    <button class="refresh" style="background:#ef4444;margin-left:0.5rem;" onclick="resetStats()">Reset All</button>
     <p class="note">This dashboard reads from your browser's localStorage. Data is per-device. Visit the main site first to start collecting data.</p>
 
     <div id="noData">No analytics data found. Visit <a href="/" style="color:#818cf8">the homepage</a> first.</div>
@@ -124,6 +125,17 @@
             dlHTML += '<tr><td>' + new Date(e.ts).toLocaleString() + '</td><td>' + e.label + '</td><td>' + src + '</td><td>' + (e.referrer || '-') + '</td></tr>';
         });
         document.getElementById('downloadsTable').innerHTML = dlHTML || '<tr><td colspan="4">No downloads yet</td></tr>';
+    }
+
+    function resetStats() {
+        if (!confirm('Reset all analytics data? This cannot be undone.')) return;
+        localStorage.removeItem('tn_events');
+        localStorage.removeItem('tn_visit_count');
+        localStorage.removeItem('tn_download_count');
+        localStorage.removeItem('tn_utm_first');
+        localStorage.removeItem('tn_utm_last');
+        loadStats();
+        alert('Analytics data cleared!');
     }
 
     loadStats();
