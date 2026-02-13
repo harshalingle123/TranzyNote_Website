@@ -8,39 +8,71 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; padding: 2rem; }
-        h1 { color: #818cf8; margin-bottom: 1.5rem; }
+        h1 { color: #818cf8; margin-bottom: 0.5rem; }
+        .subtitle { color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; }
         h2 { color: #a5b4fc; margin: 1.5rem 0 0.75rem; font-size: 1.1rem; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
         .card { background: #1e293b; border-radius: 12px; padding: 1.5rem; border: 1px solid #334155; }
         .card .number { font-size: 2.5rem; font-weight: 700; color: #818cf8; }
         .card .label { font-size: 0.85rem; color: #94a3b8; margin-top: 0.25rem; }
-        table { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 12px; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 12px; overflow: hidden; margin-bottom: 1rem; }
         th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #334155; }
         th { background: #334155; color: #a5b4fc; font-size: 0.85rem; text-transform: uppercase; }
         td { font-size: 0.9rem; }
-        .refresh { background: #6366f1; color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; }
-        .refresh:hover { background: #4f46e5; }
-        .note { color: #64748b; font-size: 0.8rem; margin-top: 1rem; }
-        #noData { color: #f87171; display: none; padding: 2rem; text-align: center; }
+        .btn { background: #6366f1; color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; text-decoration: none; display: inline-block; margin-right: 0.5rem; margin-bottom: 0.5rem; }
+        .btn:hover { background: #4f46e5; }
+        .btn-green { background: #059669; }
+        .btn-green:hover { background: #047857; }
+        .note { color: #64748b; font-size: 0.8rem; margin-top: 0.5rem; }
+        .alert { background: #1e293b; border: 1px solid #f59e0b; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .alert h3 { color: #f59e0b; margin-bottom: 0.5rem; }
+        .alert p { color: #94a3b8; font-size: 0.9rem; line-height: 1.5; }
+        .alert a { color: #818cf8; }
+        .loading { color: #64748b; padding: 1rem; text-align: center; }
+        .tag { display: inline-block; background: #334155; color: #a5b4fc; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem; }
     </style>
 </head>
 <body>
     <h1>📊 TranzyNote Analytics</h1>
-    <button class="refresh" onclick="loadStats()">Refresh</button>
-    <button class="refresh" style="background:#ef4444;margin-left:0.5rem;" onclick="resetStats()">Reset All</button>
-    <p class="note">This dashboard reads from your browser's localStorage. Data is per-device. Visit the main site first to start collecting data.</p>
+    <p class="subtitle">Real-time visitor tracking via Azure Application Insights</p>
 
-    <div id="noData">No analytics data found. Visit <a href="/" style="color:#818cf8">the homepage</a> first.</div>
-
-    <h2>Overview</h2>
-    <div class="grid">
-        <div class="card"><div class="number" id="totalVisits">0</div><div class="label">Total Visits</div></div>
-        <div class="card"><div class="number" id="totalDownloads">0</div><div class="label">Download Clicks</div></div>
-        <div class="card"><div class="number" id="totalEvents">0</div><div class="label">Total Events</div></div>
-        <div class="card"><div class="number" id="lastVisit">-</div><div class="label">Last Visit</div></div>
+    <div class="alert">
+        <h3>📈 Where to View Full Analytics</h3>
+        <p>Your site tracks ALL visitors server-side via <strong>Azure Application Insights</strong>. View full data here:</p>
+        <br>
+        <a class="btn btn-green" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/microsoft.insights%2Fcomponents" target="_blank">🔗 Azure Portal → App Insights</a>
+        <a class="btn" href="https://www.linkedin.com/company/tranzynote/admin/analytics/" target="_blank">🔗 LinkedIn Analytics</a>
+        <p class="note" style="margin-top:1rem;">
+            <strong>Instrumentation Key:</strong> <code style="color:#818cf8">31328ceb-a213-40bb-89bb-7626669e0eb3</code><br>
+            In Azure Portal: Go to Application Insights → find your resource → click "Logs" or "Usage" to see pageviews, users, sessions, and events from ALL visitors.
+        </p>
     </div>
 
-    <h2>Attribution (UTM Sources)</h2>
+    <h2>🔍 Quick Queries for Azure Portal</h2>
+    <p class="note" style="margin-bottom:1rem;">Copy these into Azure Portal → Application Insights → Logs (KQL queries):</p>
+    
+    <table>
+        <thead><tr><th>Metric</th><th>KQL Query</th></tr></thead>
+        <tbody>
+            <tr><td>Pageviews (last 7 days)</td><td><code>pageViews | where timestamp > ago(7d) | summarize count() by bin(timestamp, 1d)</code></td></tr>
+            <tr><td>Unique visitors (last 7 days)</td><td><code>pageViews | where timestamp > ago(7d) | summarize dcount(client_CountryOrRegion) by bin(timestamp, 1d)</code></td></tr>
+            <tr><td>Traffic sources</td><td><code>pageViews | where timestamp > ago(7d) | extend src = tostring(customDimensions.utm_source) | summarize count() by src</code></td></tr>
+            <tr><td>Download clicks</td><td><code>customEvents | where name contains "download" | where timestamp > ago(7d) | summarize count() by bin(timestamp, 1d)</code></td></tr>
+            <tr><td>LinkedIn traffic</td><td><code>pageViews | where timestamp > ago(7d) | where url contains "utm_source=linkedin" | summarize count() by bin(timestamp, 1h)</code></td></tr>
+        </tbody>
+    </table>
+
+    <h2>📱 This Browser's Local Data</h2>
+    <p class="note" style="margin-bottom:1rem;">This section only shows YOUR visits from THIS browser (localStorage). For all visitors, use Azure Portal above.</p>
+    
+    <div class="grid">
+        <div class="card"><div class="number" id="totalVisits">0</div><div class="label">Your Visits</div></div>
+        <div class="card"><div class="number" id="totalDownloads">0</div><div class="label">Your Download Clicks</div></div>
+        <div class="card"><div class="number" id="totalEvents">0</div><div class="label">Your Events</div></div>
+        <div class="card"><div class="number" id="lastVisit">-</div><div class="label">Your Last Visit</div></div>
+    </div>
+
+    <h2>UTM Attribution (Your Browser)</h2>
     <div class="grid">
         <div class="card">
             <div class="label">First Touch</div>
@@ -52,23 +84,22 @@
         </div>
     </div>
 
-    <h2>Source Breakdown</h2>
+    <h2>Source Breakdown (Your Browser)</h2>
     <table>
         <thead><tr><th>Source</th><th>Events</th></tr></thead>
         <tbody id="sourceTable"></tbody>
     </table>
 
-    <h2>Recent Events (Last 20)</h2>
+    <h2>Recent Events (Your Browser, Last 20)</h2>
     <table>
         <thead><tr><th>Time</th><th>Category</th><th>Action</th><th>Label</th><th>Page</th></tr></thead>
         <tbody id="eventsTable"></tbody>
     </table>
 
-    <h2>Download Events</h2>
-    <table>
-        <thead><tr><th>Time</th><th>Type</th><th>UTM Source</th><th>Referrer</th></tr></thead>
-        <tbody id="downloadsTable"></tbody>
-    </table>
+    <div style="margin-top:2rem;">
+        <button class="btn" onclick="loadStats()">Refresh Local</button>
+        <button class="btn" style="background:#ef4444;" onclick="resetStats()">Reset Local Data</button>
+    </div>
 
     <script>
     function loadStats() {
@@ -79,12 +110,6 @@
         };
         var firstUTM = JSON.parse(localStorage.getItem('tn_utm_first') || '{}');
         var lastUTM = JSON.parse(localStorage.getItem('tn_utm_last') || '{}');
-
-        if (events.length === 0) {
-            document.getElementById('noData').style.display = 'block';
-            return;
-        }
-        document.getElementById('noData').style.display = 'none';
 
         document.getElementById('totalVisits').textContent = visitor.visits;
         document.getElementById('totalDownloads').textContent = visitor.downloads;
@@ -97,7 +122,6 @@
         document.getElementById('firstTouch').textContent = Object.keys(firstUTM).length ? JSON.stringify(firstUTM, null, 2) : '(direct)';
         document.getElementById('lastTouch').textContent = Object.keys(lastUTM).length ? JSON.stringify(lastUTM, null, 2) : '(direct)';
 
-        // Source breakdown
         var sources = {};
         events.forEach(function(e) {
             var src = (e.attribution && e.attribution.last_touch && e.attribution.last_touch.utm_source) || 'organic/direct';
@@ -107,35 +131,25 @@
         Object.keys(sources).sort(function(a,b) { return sources[b] - sources[a]; }).forEach(function(s) {
             sourceHTML += '<tr><td>' + s + '</td><td>' + sources[s] + '</td></tr>';
         });
-        document.getElementById('sourceTable').innerHTML = sourceHTML || '<tr><td colspan="2">No data</td></tr>';
+        document.getElementById('sourceTable').innerHTML = sourceHTML || '<tr><td colspan="2">No local data</td></tr>';
 
-        // Recent events
         var recent = events.slice(-20).reverse();
         var evtHTML = '';
         recent.forEach(function(e) {
             evtHTML += '<tr><td>' + new Date(e.ts).toLocaleTimeString() + '</td><td>' + e.category + '</td><td>' + e.action + '</td><td>' + (e.label || '') + '</td><td>' + e.page + '</td></tr>';
         });
-        document.getElementById('eventsTable').innerHTML = evtHTML || '<tr><td colspan="5">No events</td></tr>';
-
-        // Downloads
-        var downloads = events.filter(function(e) { return e.category === 'download'; });
-        var dlHTML = '';
-        downloads.forEach(function(e) {
-            var src = (e.attribution && e.attribution.last_touch && e.attribution.last_touch.utm_source) || 'organic';
-            dlHTML += '<tr><td>' + new Date(e.ts).toLocaleString() + '</td><td>' + e.label + '</td><td>' + src + '</td><td>' + (e.referrer || '-') + '</td></tr>';
-        });
-        document.getElementById('downloadsTable').innerHTML = dlHTML || '<tr><td colspan="4">No downloads yet</td></tr>';
+        document.getElementById('eventsTable').innerHTML = evtHTML || '<tr><td colspan="5">No local events</td></tr>';
     }
 
     function resetStats() {
-        if (!confirm('Reset all analytics data? This cannot be undone.')) return;
+        if (!confirm('Reset local analytics data? This cannot be undone.')) return;
         localStorage.removeItem('tn_events');
         localStorage.removeItem('tn_visit_count');
         localStorage.removeItem('tn_download_count');
         localStorage.removeItem('tn_utm_first');
         localStorage.removeItem('tn_utm_last');
         loadStats();
-        alert('Analytics data cleared!');
+        alert('Local analytics data cleared!');
     }
 
     loadStats();
