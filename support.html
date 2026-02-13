@@ -211,15 +211,84 @@
     @media (max-width: 768px) {
       .contact-box {
         grid-template-columns: 1fr;
+        padding: 25px 20px;
       }
 
       header {
-        padding: 20px;
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      header div {
+        flex-wrap: wrap;
+      }
+
+      header a {
+        padding: 10px 16px;
+        font-size: 13px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .hero {
+        padding: 50px 16px;
       }
 
       .hero h1 {
-        font-size: 40px;
+        font-size: 32px;
       }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 16px;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .faq-card {
+        padding: 20px;
+      }
+
+      form button {
+        min-height: 48px;
+      }
+
+      form input, form textarea {
+        min-height: 44px;
+        font-size: 16px; /* prevent iOS zoom */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      header h2 {
+        font-size: 16px;
+      }
+
+      .faq-card h3 {
+        font-size: 16px;
+      }
+    }
+
+    /* Ensure no horizontal overflow */
+    html, body {
+      overflow-x: hidden;
+    }
+
+    img, video {
+      max-width: 100%;
+      height: auto;
     }
   </style>
 

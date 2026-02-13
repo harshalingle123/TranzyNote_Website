@@ -630,7 +630,15 @@
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .pricing-hero {
-                padding: 6rem 0 3rem;
+                padding: 5rem 0 2rem;
+            }
+
+            .pricing-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .pricing-hero p {
+                font-size: 1rem;
             }
 
             .pricing-grid {
@@ -638,12 +646,64 @@
             }
 
             .tab-button {
-                padding: 0.75rem 1.5rem;
+                padding: 0.75rem 1.25rem;
                 font-size: 0.875rem;
+                min-height: 44px;
+            }
+
+            .pricing-tabs {
+                gap: 0.5rem;
+                padding: 2rem 0 1.5rem;
             }
 
             .comparison-table {
                 overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .amount {
+                font-size: 2.5rem;
+            }
+
+            .pricing-cta {
+                min-height: 48px;
+                font-size: 0.9375rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            img, video {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .pricing-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .plan-name {
+                font-size: 1.25rem;
+            }
+
+            .amount {
+                font-size: 2rem;
+            }
+
+            .tab-button {
+                padding: 0.625rem 1rem;
+                font-size: 0.8125rem;
             }
         }
 
@@ -771,11 +831,11 @@
                     <img src="logo.ico" alt="tranzyNote Logo" width="40" height="40">
                     <span class="logo-text">tranzyNote</span>
                 </a>
-                <div style="display: flex; align-items: center; gap: 1.5rem;">
-                    <a href="index.html" style="color: var(--gray-700); text-decoration: none; font-weight: 600; font-size: 0.9375rem; transition: color var(--transition-base);" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-700)'">
-                        ← Back to Home
+                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="index.html" style="color: var(--gray-700); text-decoration: none; font-weight: 600; font-size: 0.9375rem; transition: color var(--transition-base); min-height: 44px; display: inline-flex; align-items: center;" onmouseover="this.style.color='var(--primary-600)'" onmouseout="this.style.color='var(--gray-700)'">
+                        ← Home
                     </a>
-                    <a href="https://tranzynotestorage.blob.core.windows.net/releases/windows/TranzyNote-Setup-latest.exe" class="btn btn-primary" data-download="primary" data-download-text="os">
+                    <a href="https://tranzynotestorage.blob.core.windows.net/releases/windows/TranzyNote-Setup-latest.exe" class="btn btn-primary" data-download="primary" data-download-text="os" style="min-height: 44px;">
                         Get for Windows
                     </a>
                 </div>

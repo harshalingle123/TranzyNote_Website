@@ -210,8 +210,19 @@
                     <img src="logo.ico" alt="tranzyNote Logo" width="40" height="40">
                     <span class="logo-text">tranzyNote</span>
                 </a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="payment.html" class="nav-link">Pricing</a>
+                    <a href="blog/" class="nav-link">Blog</a>
+                    <a href="help-center.html" class="nav-link">Help</a>
+                </div>
                 <div class="nav-actions">
                     <a href="payment.html" class="btn btn-primary">View Pricing</a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -468,5 +479,9 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="analytics.js" defer></script>`n</body>
+    <script src="analytics.js" defer></script>
+    <script>
+    (function(){var t=document.getElementById('mobileMenuToggle'),m=document.getElementById('navMenu');if(t&&m){t.addEventListener('click',function(){t.classList.toggle('active');m.classList.toggle('active')});m.querySelectorAll('.nav-link').forEach(function(l){l.addEventListener('click',function(){t.classList.remove('active');m.classList.remove('active')})});}})();
+    </script>
+</body>
 </html>

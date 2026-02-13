@@ -1220,6 +1220,44 @@
             }
         }
 
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 16px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .top-nav-content {
+                padding: 0 12px;
+            }
+
+            .section {
+                padding: 20px 12px;
+            }
+
+            .btn-download {
+                min-height: 48px;
+                font-size: 13px;
+            }
+        }
+
+        /* Ensure no overflow */
+        html, body {
+            overflow-x: hidden;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Touch targets */
+        a, button {
+            min-height: 44px;
+        }
+
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
