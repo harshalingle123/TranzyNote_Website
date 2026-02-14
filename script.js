@@ -211,11 +211,13 @@ class Navigation {
     toggleMobileMenu() {
         this.navMenu?.classList.toggle('active');
         this.mobileToggle?.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
     }
 
     closeMobileMenu() {
         this.navMenu?.classList.remove('active');
         this.mobileToggle?.classList.remove('active');
+        document.body.classList.remove('menu-open');
     }
 }
 

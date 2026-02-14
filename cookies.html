@@ -448,7 +448,7 @@
     <script src="script.js"></script>
     <script src="analytics.js" defer></script>
     <script>
-    (function(){var t=document.getElementById('mobileMenuToggle'),m=document.getElementById('navMenu');if(t&&m){t.addEventListener('click',function(){t.classList.toggle('active');m.classList.toggle('active')});m.querySelectorAll('.nav-link').forEach(function(l){l.addEventListener('click',function(){t.classList.remove('active');m.classList.remove('active')})});}})();
+    (function(){var t=document.getElementById('mobileMenuToggle'),m=document.getElementById('navMenu');if(t&&m){t.addEventListener('click',function(){t.classList.toggle('active');m.classList.toggle('active');document.body.classList.toggle('menu-open')});m.querySelectorAll('.nav-link').forEach(function(l){l.addEventListener('click',function(){t.classList.remove('active');m.classList.remove('active');document.body.classList.remove('menu-open')})});}})();
     </script>
 </body>
 </html>
