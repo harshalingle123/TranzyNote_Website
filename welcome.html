@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Welcome to tranzyNote</title>
+    <link rel="canonical" href="https://tranzynote.darshix.com/welcome.html">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="/ads.js"></script>
+    <style>
+        :root {
+            --primary: #6366F1;
+            --secondary: #8B5CF6;
+            --ink: #111827;
+            --muted: #4B5563;
+            --line: #E5E7EB;
+            --bg: #F9FAFB;
+            --card: #FFFFFF;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --ink: #F9FAFB;
+                --muted: #9CA3AF;
+                --line: #374151;
+                --bg: #111827;
+                --card: #1F2937;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            line-height: 1.6;
+        }
+        main {
+            width: 100%;
+            max-width: 560px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+        }
+        .badge {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+        }
+        h1 { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; }
+        .lead { color: var(--muted); margin-top: 8px; }
+        ol { text-align: left; margin: 28px 0 8px; padding-left: 0; list-style: none; counter-reset: step; }
+        li {
+            counter-increment: step;
+            position: relative;
+            padding: 0 0 18px 44px;
+        }
+        li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 0.875rem;
+            font-weight: 700;
+            background: var(--bg);
+            border: 1px solid var(--line);
+            color: var(--primary);
+        }
+        li strong { display: block; }
+        li span { color: var(--muted); font-size: 0.95rem; }
+        .actions { margin-top: 12px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid var(--line);
+            color: var(--ink);
+        }
+        .btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .btn.primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border-color: transparent; }
+        .note { margin-top: 24px; font-size: 0.85rem; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="badge" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg>
+        </div>
+        <h1>You're in. Welcome to tranzyNote.</h1>
+        <p class="lead">Your account is ready and your free 10 minutes are waiting in the app.</p>
+
+        <ol>
+            <li><strong>Go back to the tranzyNote app</strong><span>It's already signed in. You can close this tab.</span></li>
+            <li><strong>Pick your interview type and add your résumé</strong><span>Answers use your own experience, so add it once.</span></li>
+            <li><strong>Start a session before your interview</strong><span>It listens to the interviewer and shows an answer in about a second, hidden from screen share.</span></li>
+        </ol>
+
+        <div class="actions">
+            <a class="btn primary" href="/help-center.html">Quick start guide</a>
+            <a class="btn" href="/payment.html">See pricing</a>
+        </div>
+        <p class="note">Need help? Write to us from the <a href="/support.html" style="color: inherit;">support page</a>.</p>
+    </main>
+
+    <script>
+        // Count this sign-up once. The app passes a unique id (t) so a reload can't count it twice.
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('src') !== 'app') return;
+            var id = (params.get('t') || '').slice(0, 64);
+            var key = 'tn_signup_counted_' + id;
+            try {
+                if (id && localStorage.getItem(key)) return;
+                if (window.tnAds) window.tnAds.signup(id);
+                if (id) localStorage.setItem(key, '1');
+            } catch (e) {
+                if (window.tnAds) window.tnAds.signup(id);
+            }
+        })();
+    </script>
+</body>
+</html>

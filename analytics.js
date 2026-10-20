@@ -133,6 +133,7 @@
             else if (href.indexOf('linux') !== -1) os = 'linux';
 
             trackEvent('download', 'click', downloadType + '_' + os, 1);
+            if (window.tnAds) window.tnAds.download();
 
             // Store download timestamp
             localStorage.setItem('tn_last_download', new Date().toISOString());
