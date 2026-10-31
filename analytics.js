@@ -1,7 +1,8 @@
 /**
  * TranzyNote Analytics & Funnel Tracking
  * Tracks: download clicks, UTM sources, page engagement, CTA interactions
- * Storage: localStorage + beacon to /api/track (future) + console log
+ * Storage: localStorage + beacon to the TranzyNote API /api/track (pageviews, downloads,
+ * pricing clicks; shown in the app's Admin console > Website) + console log
  */
 (function () {
     'use strict';
@@ -65,6 +66,62 @@
     }
 
     // ============================================
+    // SEND TO THE TRANZYNOTE API
+    // ============================================
+    // Only the events that answer "how many people visit, download and sign up, and from where".
+    // Anonymous: random visitor id, page, referring site's host, UTM tags, OS family.
+    var TRACK_URL = window.TN_TRACK_URL || 'https://tranzynote-api.azurewebsites.net/api/track';
+
+    function serverEventName(evt) {
+        if (evt.category === 'pageview') return 'pageview';
+        if (evt.category === 'download') return 'download';
+        if (evt.category === 'navigation' && evt.label === 'pricing_page') return 'pricing_click';
+        return null;
+    }
+
+    function referrerHost() {
+        try {
+            var host = document.referrer ? new URL(document.referrer).hostname : '';
+            return host === window.location.hostname ? '' : host;
+        } catch (e) {
+            return '';
+        }
+    }
+
+    function sendToServer(evt) {
+        var name = serverEventName(evt);
+        if (!name) return;
+        // Don't count local previews or file:// copies of the site
+        if (window.location.protocol === 'file:' || /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) && !window.TN_TRACK_URL) return;
+        var last = evt.attribution.last_touch || {};
+        var first = evt.attribution.first_touch || {};
+        var os = evt.platform;
+        if (name === 'download') {
+            // Download labels end with the OS of the file clicked: "hero_windows", "nav_mac-arm64"
+            os = String(evt.label).split('_').pop().split('-')[0] || os;
+        }
+        var body = JSON.stringify({
+            event: name,
+            label: String(evt.label || '').slice(0, 120),
+            page: evt.page,
+            visitor: evt.visitor,
+            session: evt.session,
+            referrer: referrerHost(),
+            utm_source: last.utm_source || last.ref || '',
+            utm_medium: last.utm_medium || '',
+            utm_campaign: last.utm_campaign || '',
+            first_source: first.utm_source || first.ref || '',
+            os: os
+        });
+        try {
+            if (navigator.sendBeacon && navigator.sendBeacon(TRACK_URL, new Blob([body], { type: 'text/plain' }))) return;
+        } catch (e) { /* fall through */ }
+        try {
+            fetch(TRACK_URL, { method: 'POST', body: body, keepalive: true, mode: 'no-cors', headers: { 'Content-Type': 'text/plain' } });
+        } catch (e) { /* tracking must never break the page */ }
+    }
+
+    // ============================================
     // EVENT TRACKING
     // ============================================
     var events = [];
@@ -96,6 +153,8 @@
 
         // Console log for debugging
         console.log('[TN Analytics]', category, action, label, evt);
+
+        sendToServer(evt);
 
         // Send to Application Insights if available
         if (window.appInsights && window.appInsights.trackEvent) {
