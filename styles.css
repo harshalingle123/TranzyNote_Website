@@ -1962,6 +1962,14 @@ img, video, iframe, embed, object {
     text-decoration: underline;
 }
 
+.install-note {
+    text-align: center;
+    margin: 0.5rem auto 0;
+    max-width: 34rem;
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+
 /* ===== FOOTER ALIGNMENT FIX ===== */
 .footer-bottom {
     display: flex;

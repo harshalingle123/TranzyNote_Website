@@ -83,6 +83,12 @@
             }
         }
 
+        // The SmartScreen install tip only applies to the Windows installer
+        if (info.os !== 'windows') {
+            var winOnly = document.querySelectorAll('[data-windows-only]');
+            for (var w = 0; w < winOnly.length; w++) winOnly[w].hidden = true;
+        }
+
         // Build "Also available for" links - hide detected OS
         // macOS shows two sub-links (Apple Silicon & Intel)
         var platforms = [
